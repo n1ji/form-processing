@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Spectral');
 
 html {
-    background-color: lightgray;
+    background-color: #170312;
+    color:#E7DFC6;
     font-family: 'Quicksand', sans-serif;
     font-size: 0.95em;
     line-height: 1.5em;
@@ -14,18 +15,20 @@ html {
 
 body{
     margin:0; /* removes gap at top of page */
+    
 }
 
 ::selection {
-    color: #000; 
-    background: #ff0;
+    color: #E7DFC6; 
+    background: #AD343E;
 }
 
 h1 {
     font-weight: normal;
     margin: auto;
-    background: #fff;
+    color: #170312;
     line-height: 2.5em;
+    background: #AD343E;
 }
 /*
  The border radius on h1.page-header and main.wrapper provide the 
@@ -43,7 +46,7 @@ h1.page-header{
  
 
  main.wrapper {
-    background-color: white;
+    background-color: #1b1518;
     overflow: auto;
     -moz-border-radius-bottomleft: 5px;
     -moz-border-radius-bottomright: 5px;
@@ -63,13 +66,13 @@ h2,h3 {
 }
 
 a {
-    color:darkcyan;
+    color:#AD343E;
     text-decoration: none;
 }
 
 a:hover {
-    color: whitesmoke;
-    background-color: darkcyan;
+    color: #E7DFC6;
+    background-color: #AD343E;
     text-decoration: none;
 }
 
