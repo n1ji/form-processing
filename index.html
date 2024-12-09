@@ -14,8 +14,7 @@
      <h1 class="page-header">Form Processing</h1>
         <nav class="topnav" id="myTopnav">
             <a href="index.html" class="active">Home</a>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
+            <a href="https://n1ji.github.io/portal">Portal</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </nav>
      </header>
@@ -84,7 +83,14 @@
             <input type="checkbox" name="Interested_In" value="Website">Website<br>
             <input type="checkbox" name="Interested_In" value="Website">Website<br>
           </label>
+        </fieldset>
       </div>
+
+      <div>
+        <label for="Note">Note</label><br>
+        <textarea id="Note" name="Note" placeholder="Write special delivery instructions here:" rows="6" cols="52"></textarea>
+      </div>
+
       <div>
         <input type="submit">
       </div>
@@ -109,6 +115,7 @@
 
   <script src="js/main.js"></script> 
   <script>
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -117,13 +124,34 @@
 
       urlParams.forEach(function(value,key){
 
+        switch(key){
+          case "First_Name":
+          case "Last_Name":
+          case "City":
+          case "Address":
+            value = titleCase(value);
+          break;
+        }
+
         key = key.split("_").join(" ");
         myOutput += `<p>${key}: ${value}</p>`;
       });
       myOutput += `<p><a href="index.html">CLEAR</a></p>`; 
       myOutput += `</div>`;
       document.querySelector("#output").innerHTML = myOutput;
-    }
-  </script>  
+
+    }//end of if statement to see if there is anything on the querystring if not does nothing
+
+    function titleCase(str){
+      str = str.split(" ");
+
+      for(let x=0; x<str.length;x++){
+          str[x] = str[x].charAt(0).toUpperCase() + str[x].slice(1).toLowerCase();
+      
+      }
+      return str.join(" ");
+    
+    }//end of titleCase
+  </script> 
  </body>
 </html>
